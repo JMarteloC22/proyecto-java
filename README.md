@@ -1,6 +1,3 @@
-Aquí tienes un **README.md** en texto plano, sin emojis y con comentarios para que puedas copiarlo, pegarlo y editarlo si lo deseas:
-
-
 # Secure Inventory App, Proyecto de Maven
 
 
