@@ -1,10 +1,8 @@
 Aquí tienes un **README.md** en texto plano, sin emojis y con comentarios para que puedas copiarlo, pegarlo y editarlo si lo deseas:
 
-````markdown
-# Secure Inventory App
-<!--
-Título del proyecto
--->
+
+# Secure Inventory App, Proyecto de Maven
+
 
 Aplicación Java CLI (Command Line Interface) para la gestión de inventario siguiendo principios de Arquitectura Limpia y POO/SOLID.
 
@@ -13,20 +11,17 @@ Permite agregar, actualizar, eliminar y listar productos desde la consola, usand
 ---
 
 ## Prerrequisitos
-<!--
-Indica lo que se necesita antes de ejecutar el proyecto
--->
 
 Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
-- Java 17 o superior  
+* Java 17 o superior  
   Verifica la versión:
   ```bash
   java -version
-````
+  ```
 
 * Apache Maven 3.8 o superior
-  Verifica la versión:
+    Verifica la versión:
 
   ```bash
   mvn -v
@@ -36,18 +31,15 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
 ## Instalación y compilación
 
-<!--
-Pasos para clonar y compilar el proyecto
--->
 
-1. Clona este repositorio:
+1. Clona este repositorio en un folder local, ejecutando el siguiente comando:
 
    ```bash
    git clone https://github.com/tu-usuario/secure-inventory-app.git
    cd secure-inventory-app
    ```
 
-2. Compila el proyecto:
+2. Compila el proyecto, este deberia de mostar el compilado como funcional o correcto:
 
    ```bash
    mvn clean compile
@@ -59,11 +51,7 @@ Pasos para clonar y compilar el proyecto
 
 ## Ejecución de la aplicación
 
-<!--
-Cómo iniciar la aplicación desde la línea de comandos
--->
-
-Para iniciar la aplicación en modo consola, ejecuta:
+Para iniciar la aplicación en modo consola, ejecuta el siguiente comando, este mostrara un printo con el funcionamiento del codigo:
 
 ```bash
 mvn exec:java
@@ -87,11 +75,7 @@ Seleccione una opción:
 
 ## Empaquetar en un JAR ejecutable
 
-<!--
-Cómo generar un archivo JAR para distribuir la aplicación
--->
-
-Si deseas crear un JAR para distribuirlo, usa:
+Si deseas crear un JAR para distribuirlo, este en dado caso que se requiera la distribucion privada o comercial de este, usa el siguiente comando:
 
 ```bash
 mvn clean package
@@ -113,46 +97,43 @@ java -jar target/secure-inventory-app-1.0-SNAPSHOT.jar
 
 ## Estructura del proyecto
 
-<!--
-Breve descripción de la organización de carpetas y archivos
--->
 
 ```
 secure-inventory-app/
 │
 ├─ src/
 │  ├─ main/
-│  │  ├─ java/com/inventory/...   # Código fuente dividido en capas (domain, usecases, adapters, cli)
-│  │  └─ resources/               # Recursos adicionales (no utilizados en este ejemplo)
-│  └─ test/                        # Pruebas (opcional)
+│  │  ├─ java/com/inventory/                  
+│  │  │  ├─ domain/                          
+│  │  │  │  ├─ Product.java                  
+│  │  │  │  └─ ProductRepository.java        
+│  │  │  │
+│  │  │  ├─ usecases/                         
+│  │  │  │  ├─ AddProductUseCase.java        
+│  │  │  │  ├─ UpdateProductUseCase.java    
+│  │  │  │  ├─ DeleteProductUseCase.java      
+│  │  │  │  └─ ListAllProductsUseCase.java    
+│  │  │  │
+│  │  │  ├─ adapters/                         
+│  │  │  │  ├─ controller/
+│  │  │  │  │  └─ ProductController.java      
+│  │  │  │  └─ persistence/
+│  │  │  │     └─ ProductRepositoryImpl.java  
+│  │  │  │
+│  │  │  └─ cli/
+│  │  │     └─ Main.java                      
+│  │  │
+│  │  └─ resources/                           
+│  │
+│  └─ test/                                   
+│     └─ java/com/inventory/
+│        └─ AppTest.java                      
 │
-├─ pom.xml                         # Archivo de configuración de Maven
-└─ README.md                        # Documentación del proyecto
-```
+├─ target/                                    
+│
+├─ pom.xml                                    
+└─ README.md                                  
 
+```
 ---
 
-## Notas
-
-<!--
-Información adicional útil
--->
-
-* Persistencia: La aplicación usa una estructura en memoria (ConcurrentHashMap) para almacenar productos, por lo que los datos se pierden al cerrar el programa.
-* Arquitectura: El código está dividido en capas (`domain`, `usecases`, `adapters`, `cli`) siguiendo los principios de Clean Architecture para facilitar pruebas y escalabilidad.
-
----
-
-## Autor
-
-<!--
-Información del autor o equipo
--->
-
-Proyecto académico desarrollado en Java y Maven como ejemplo de buenas prácticas en desarrollo seguro y arquitectura de software.
-
-```
-
-Puedes pegar este contenido directamente en un archivo llamado **README.md** dentro de tu repositorio en GitHub.  
-Solo reemplaza `https://github.com/tu-usuario/secure-inventory-app.git` con la URL real de tu repositorio.
-```
